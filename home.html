@@ -1,0 +1,147 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JST | Home</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+	<link rel="icon" type="image/x-icon" href="Images/favicon.png">
+    <style>
+        body {
+            font-family: 'SF Pro Display', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            width: 100%;
+            max-width: 1000px;
+            padding: 20px;
+            text-align: right;
+        }
+        .name {
+            padding: 0 20px 0 0;
+            max-width: 100%;
+        }
+        h1 {
+            font-size: 5rem;
+            font-weight: 900;
+            margin: 0;
+        }
+        .name p{
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 5px 0;
+        }
+        .name p span:nth-of-type(1) {
+            color: #3c4cdb;
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 5px;
+        }
+        .name p span:nth-of-type(2) {
+            color: #d9523b;
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 5px;
+        }
+        .name p span:nth-of-type(3) {
+            color: #daba41;
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 5px;
+        }
+        .photo {
+            position: relative;
+            max-width: 100%;
+            height: auto;
+            max-height: 400px;
+            display: flex;
+            justify-content: center;
+        }
+        .photo img {
+            width: 100%;
+            height: 100%;
+            max-height: 400px;
+            object-fit: cover;
+        }
+        .photo img:first-child {
+            border: 16px solid #000000;
+        }
+        .photo .tape {
+            position: absolute;
+            top: -36px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 250px;
+            height: auto;
+            z-index: 10;
+            rotate: -3deg;
+        }
+        @media screen and (max-width: 820px) {
+            .name {
+                padding: 0 0 20px 0;
+            }
+            h1 {
+                font-size: 3.5rem;
+            }
+            .name p {
+                font-size: 1.75rem;
+            }
+            .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .photo img {
+                width: 80%;
+                height: 80%;
+            }
+            .photo .tape {
+                width: 150px;
+                top: -16px;
+            }
+        }
+    </style>
+</head>
+<body class="home-page">
+    <div id="menu-container"></div>
+    <script>
+        fetch('menu.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('menu-container').innerHTML = data;
+            });
+    </script>
+    <div class="container">
+        <div class="name">
+            <h1>JACK<br>SAYEGH</h1>
+            <p>
+                <span>Photographer</span><br>
+                <span>Filmmaker</span><br>
+                <span>Creator</span>
+            </p>
+        </div>
+        <div class="photo">
+            <img src="images/jack_sayegh.jpg" alt="Jack Sayegh">
+            <img src="images/tape.png" class="tape">
+        </div>        
+    </div>
+	<script type="text/javascript" src="main.js"></script>
+</body>
+</html>
+
+
+
+
+
+

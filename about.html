@@ -1,0 +1,104 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JST | About</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+	<link rel="icon" type="image/x-icon" href="Images/favicon.png">
+    <style>
+        body {
+            font-family: 'SF Pro Display', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .bio {
+            width: 60%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+        }
+
+        .text {
+            flex: 1;
+        }
+        .text p {
+            margin: 0;
+            font-weight: 500;
+            font-size: 18px;
+        }
+
+        .text p:not(:last-child) {
+            padding-bottom: 20px;
+        }
+
+        .photo {
+            width: 300px;
+            max-width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        @media (max-width: 1260px) {
+            body {
+                height: auto !important;
+                min-height: 100vh;
+                overflow-y: auto;
+            }
+
+            .bio {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding-top: 120px;
+                padding-bottom: 60px;
+                box-sizing: border-box;
+                height: auto !important;
+                max-height: none !important;
+                overflow: visible !important;
+            }
+
+            .bio .photo {
+                width: 300px;
+                height: auto;
+                object-fit: cover;
+            }
+
+            .bio .text {
+                width: 100%;
+            }
+        }
+
+    </style>
+</head>
+<body class="about-page">
+    <div id="menu-container"></div>
+        <div class="bio">
+            <div class="text">
+                <p>Hi, I'm Jack — and this is <span style="font-weight: 700;">Jack Shot This</span>.</p>
+                <p>I'm a photographer and videographer based in Vancouver, BC, working across a wide range of styles and projects. Most of my work is in real estate, but I don't limit myself to one genre. Over the past 5+ years, I've shot everything from portraits and landscapes to product photography, events, architecture, and sports — whatever catches my eye or tells a good story.</p>
+                <p>My work is all about adaptability. I tailor each shoot to the project and the people involved, whether that means capturing a quiet moment, a fast-paced event, or a clean, polished look for e-commerce. My editing style shifts depending on the vibe, but lately I've been drawn to a more cinematic approach — simple, intentional, and honest. Less is more.</p>
+                <p>I love being outdoors, exploring new techniques, and constantly learning. Whether I'm flying a drone, using a 360° camera, or working with just natural light, my goal is always the same: to capture something that feels real — something that matters later.</p>
+                <p>When you work with JST, you're not just hiring someone to click a shutter. You're collaborating with someone who cares about the bigger picture — your story, your message, your moment.</p>
+                <p>Let's shoot something worth remembering!</p>
+            </div>
+            <img src="/images/about_photo.jpg" class="photo">
+        </div>
+	<script type="text/javascript" src="main.js"></script>
+    <script>
+        fetch('menu.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('menu-container').innerHTML = data;
+            });
+    </script>
+</body>
+</html>
