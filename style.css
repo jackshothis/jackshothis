@@ -87,6 +87,7 @@ ul {
     font-weight: 700;
     text-transform: uppercase;
     font-size: 1rem;
+    padding: 8px;
 }
 
 .navigation a {
@@ -117,6 +118,47 @@ ul {
 .navigation .logo a:hover {
     border-bottom: none;
 }
+
+            .book_now {
+                background: linear-gradient(110deg, #d97706, #f59e0b, #fbbf24, #d97706);
+                background-size: 250% 100%;
+                border-radius: 8px;
+                animation: gradientMove 5s ease infinite, bookPulse 2.5s ease-in-out infinite;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            .book_now a {
+                color: #fff !important;
+                font-weight: 600;
+                display: block;
+            }
+
+            @keyframes gradientMove {
+                0% {
+                    background-position: 0% 50%;
+                }
+                50% {
+                    background-position: 100% 50%;
+                }
+                100% {
+                    background-position: 0% 50%;
+                }
+            }
+
+            @keyframes bookPulse {
+                0%, 100% {
+                    box-shadow: 0 0 0 rgba(245, 158, 11, 0);
+                }
+                50% {
+                    box-shadow: 0 0 14px rgba(245, 158, 11, 0.35);
+                }
+            }
+
+            .book_now:hover a {
+                border-bottom: none;
+                transform: scale(1.05);
+                transition: transform 0.3s ease;
+            }
 
 /* Instagram Icon */
 .navigation .social a {
